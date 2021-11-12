@@ -28,9 +28,13 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let counter = 0
+  for (let i = 0; i < number + 1; i++){
+    counter = counter + i
+       
+   }
+    return counter
   }
  
 
@@ -56,9 +60,17 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+    function animalNames(array) {
+      let displayName = [];
+  
+        array.forEach(function(item){
+  
+          displayName.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
+          
+        });
+  
+        return displayName;
+      }
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -67,8 +79,16 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(array) {
+
+    const lowerNames = array.map(function(item) {
+
+     return item.animal_name.toLowerCase();
+
+    });
+
+    return lowerNames;
+
   }
   
   
@@ -77,8 +97,15 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+
+    const lowPop = array.filter(function(item){
+      return item.population < 5
+
+    });
+    
+    return lowPop
+
   }
   
 
@@ -88,8 +115,12 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(array){
+
+    const animalPop = array.reduce(function(accumulator, item){
+      return accumulator + item.population;
+    },0);
+    return animalPop
   }
   
   
