@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// because of closure the the function is able grab a variable in its outer function, it would also be able to grab external, but if it was the other way around a variable was declared in nestedFunction my function would not be able to grab it.
 
 
 
